@@ -3,8 +3,9 @@ package launcher
 import "time"
 
 type ProcessFunc struct {
-	launchFunc func() (err error)
-	name       string
+	launchFunc   func() (err error)
+	name         string
+	timeDuration time.Duration
 }
 
 func (l *ProcessFunc) Launch() error {
@@ -16,5 +17,8 @@ func (l *ProcessFunc) Name() string {
 }
 
 func (l *ProcessFunc) TimeDuration() time.Duration {
-	return DefaultDuration
+	if l.timeDuration == 0 {
+		l.timeDuration = DefaultDuration
+	}
+	return l.timeDuration
 }
