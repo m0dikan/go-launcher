@@ -1,5 +1,5 @@
 package launcher
 
 type AlertSender interface {
-	Send(...interface{})
+	Send(msg string)
 }

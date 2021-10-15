@@ -84,7 +84,7 @@ func (p *LaunchProcessor) lockedLaunch(l LaunchProcess) (err error) {
 	return
 }
 
-func (p *LaunchProcessor) error(msg ...interface{}) {
+func (p *LaunchProcessor) error(msg string) {
 	if p.alertSender != nil {
 		p.alertSender.Send(msg)
 	}

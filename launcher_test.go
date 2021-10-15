@@ -143,8 +143,8 @@ type BetaAlertSender struct {
 	AlertSender
 }
 
-func (a *BetaAlertSender) Send(msg ...interface{}) {
-	logrus.Error(msg...)
+func (a *BetaAlertSender) Send(msg string) {
+	logrus.Error(msg)
 }
 
 type BetaLauncher struct{}
